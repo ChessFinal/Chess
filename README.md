@@ -1,24 +1,23 @@
-# README
+# The Sourcerers Chess Application - Agile Team Development
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Play it at https://chess-the-sourcerers.herokuapp.com/
 
-Things you may want to cover:
+This is a two-player chess application built as a capstone project for The Firehose Project Full-Stack Web Development program.  Under the guidance of a senior developer, the team had weekly Agile meetings for code reviews, sprint planning, and feature assignments.
 
-* Ruby version
+The following tools were used to create this application:
 
-* System dependencies
+* Ruby on Rails
+* PostgreSQL database
+* Bootstrap framework
+* Rspec Test-Driven Development
+* Heroku hosting
 
-* Configuration
+The Sourcerers are:
+<a href="https://github.com/jpetel">Jacob Petel</a>
+<a href="https://github.com/khuuwinnie">Winnie Khuu</a>
 
-* Database creation
+Lead by:
+<a href="#">George Heeres</a>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+With amazing guidance from:
+<a href="#">Wilson Horrell</a>
