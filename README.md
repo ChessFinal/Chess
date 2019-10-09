@@ -13,7 +13,7 @@ The following tools were used to create this application:
 * Heroku hosting
 
 The Sourcerers are:
-<a href="https://github.com/jpetel">Jacob Petel</a>
+<a href="https://github.com/jpetel">Jacob Petel</a> & 
 <a href="https://github.com/khuuwinnie">Winnie Khuu</a>
 
 Lead by:
