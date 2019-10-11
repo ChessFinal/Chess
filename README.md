@@ -17,7 +17,7 @@ The Sourcerers are:
 <a href="https://github.com/khuuwinnie">Winnie Khuu</a>
 
 Lead by:
-<a href="#">George Heeres</a>
+<a href="https://github.com/gheeres">George Heeres</a>
 
 With amazing guidance from:
-<a href="#">Wilson Horrell</a>
+<a href="https://github.com/BigPhatNerd">Wilson Horrell</a>
