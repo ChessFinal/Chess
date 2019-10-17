@@ -6,4 +6,6 @@ RSpec.describe GamesController, type: :controller do
       assert true
     end
   end
+
+
 end
