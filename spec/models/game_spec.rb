@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Game, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-
+  
   describe "The is_obstructed method describes available moves for a chess piece" do
       it "The is_obstructed? method should return false if a chess piece is not blocking it" do
         @game = Game.new
@@ -21,7 +20,7 @@ RSpec.describe Game, type: :model do
       end
       it "Should raise an error if a chess piece attempts to move from D4 to B5" do
         @game = Game.new
-      #  expect { @game.chess_moves('D4', 'B5') }.to raise_error(ArgumentError)
+        expect { @game.is_obstructed? }.to raise_error(ArgumentError)
         @game.chess_moves('D4', 'B5')
         p @game.move_from, @game.move_to
       end
