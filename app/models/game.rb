@@ -20,3 +20,4 @@ class Game < ApplicationRecord
     @move_to =  move_to
   end
 end
+

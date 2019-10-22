@@ -20,7 +20,9 @@ RSpec.describe Game, type: :model do
       end
       it "Should raise an error if a chess piece attempts to move from D4 to B5" do
         @game = Game.new
-        expect { @game.is_obstructed? }.to raise_error(ArgumentError)
+        expect { 
+          expect (@game.is_obstructed?).to raise_error(ArgumentError)
+        }
         @game.chess_moves('D4', 'B5')
         p @game.move_from, @game.move_to
       end
