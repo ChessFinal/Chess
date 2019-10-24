@@ -35,3 +35,29 @@
     display: table-cell;
     vertical-align: middle;
 }
+
+.board {    
+    width: 690px;
+    height: 690px;
+    margin: 20px;
+    border: 25px solid #333;
+}
+
+.grey {
+    background-color: grey;
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+.white {
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+.chess_piece {
+    font-size: 50px;
+    height: 50px;
+    
+}
