@@ -1,40 +1,35 @@
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Chess</title>
+    <meta charset="UTF-8">
+    <title>Chess</title>
 </head>
+
 <body>
-
-  <div class="container">
-    <div class="row align-items-center justify-content-center">
-      <div class="board">
-        <% (0..7).each do |y| %>
-          <% (0..7).each do |x| %>
-            <% chess_piece = @chess_pieces.where("(x_position = ? AND y_position = ?)", x,y).first %>
-              <% if chess_piece.nil? %>
-              <%=byebug%>
-                <div class="<%=@game.tile_colour(x,y)%>" data-x-coord=<%= x %> data-y-coord=<% y %>>
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="board">
+                <% (0..7).each do |y| %>
+                <% (0..7).each do |x| %>
+                <% chess_piece = @chess_pieces.where("(x_position = ? AND y_position = ?)", x,y).first %>
+                <% if chess_piece.nil? %>
+                <div class="<%=@game.tile_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
+                    <%= y %>>
                 </div>
-              <% else %>
-                <div class="<%=@game.tile_colour(x,y)%>" data-x-coord=<%= x %> data-y-coord=<% y %>>
+                <% else %>
+                <div class="<%=@game.tile_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
+                    <%= y %>>
+                    <div class="chess_piece text-center" data-piece-id="<%=chess_piece.id%>" data-x-coord=<%=x %> data-y-coord=
+                        <%= y %> >
+                        <%= chess_piece.unicode.html_safe %>
+                    </div>
                 </div>
-                <div class="chess_piece" data-piece-id="<%=chess_piece.id%>" data-x-coord=<%= x %> data-y-coord=<%= y %> >
-                  <%= chess_piece.unicode.html_safe %>
-                </div>
-              </div>
-            <% end %> 
-          <% end %>
-        <% end %>
-      </div>
+                <% end %>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
     </div>
-  </div>
-
-
-
-
-
-
-
-
 </body>
+
 </html>
