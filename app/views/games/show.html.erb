@@ -1,88 +1,35 @@
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Chess</title>
-</head>
-<body>
-<div class="chessboard">
-<!-- 8th row -->
-<div row="8" column="1" class=" square square-white"  id="a8" data-piece="rook"></div>
-<div row="8" column="2" class=" square square-grey"   id="b8" data-piece="knight">bK</div>
-<div row="8" column="3" class=" square square-white"  id="c8" data-piece="bishop">bB</div>
-<div row="8" column="4" class=" square square-grey"   id="d8" data-piece="king">bK</div>
-<div row="8" column="5" class=" square square-white"  id="e8" data-piece="queen">bQ</div>
-<div row="8" column="6" class=" square square-grey"   id="f8" data-piece="bishop">bB</div>
-<div row="8" column="7" class=" square square-white"  id="g8" data-piece="knight">bK</div>
-<div row="8" column="8" class=" square square-grey"   id="h8" data-piece="rook">bR</div>
-<!-- 7th row -->
-<div row="7" column="1" class=" square square-grey"   id="a7" data-piece="pawn">bp</div>
-<div row="7" column="2" class=" square square-white"  id="b7" data-piece="pawn">bp</div>
-<div row="7" column="3" class=" square square-grey"   id="c7" data-piece="pawn">bp</div>
-<div row="7" column="4" class=" square square-white"  id="d7" data-piece="pawn">bp</div>
-<div row="7" column="5" class=" square square-grey"   id="e7" data-piece="pawn">bp</div>
-<div row="7" column="6" class=" square square-white"  id="f7" data-piece="pawn">bp</div>
-<div row="7" column="7" class=" square square-grey"   id="g7" data-piece="pawn">bp</div>
-<div row="7" column="8" class=" square square-white"  id="h7" data-piece="pawn">bp</div>
-<!-- 6th row -->
-<div row="6" column="1" class=" square square-white"  id="a6" data-piece=""></div>
-<div row="6" column="2" class=" square square-grey"   id="b6" data-piece=""></div>
-<div row="6" column="3" class=" square square-white"  id="c6" data-piece=""></div>
-<div row="6" column="4" class=" square square-grey"   id="d6" data-piece=""></div>
-<div row="6" column="5" class=" square square-white"  id="e6" data-piece=""></div>
-<div row="6" column="6" class=" square square-grey"   id="f6" data-piece=""></div>
-<div row="6" column="7" class=" square square-white"  id="g6" data-piece=""></div>
-<div row="6" column="8" class=" square square-grey"   id="h6" data-piece=""></div>
-<!-- 5th row -->
-<div row="5" column="1" class=" square square-grey"   id="a5" data-piece=""></div>
-<div row="5" column="2" class=" square square-white"  id="b5" data-piece=""></div>
-<div row="5" column="3" class=" square square-grey"   id="c5" data-piece=""></div>
-<div row="5" column="4" class=" square square-white"  id="d5" data-piece=""></div>
-<div row="5" column="5" class=" square square-grey"   id="e5" data-piece=""></div>
-<div row="5" column="6" class=" square square-white"  id="f5" data-piece=""></div>
-<div row="5" column="7" class=" square square-grey"   id="g5" data-piece=""></div>
-<div row="5" column="8" class=" square square-white"  id="h5" data-piece=""></div>
-<!-- 4th row -->
-<div row="4" column="1" class=" square square-white"  id="a4" data-piece=""></div>
-<div row="4" column="2" class=" square square-grey"   id="b4" data-piece=""></div>
-<div row="4" column="3" class=" square square-white"  id="c4" data-piece=""></div>
-<div row="4" column="4" class=" square square-grey"   id="d4" data-piece=""></div>
-<div row="4" column="5" class=" square square-white"  id="e4" data-piece=""></div>
-<div row="4" column="6" class=" square square-grey"   id="f4" data-piece=""></div>
-<div row="4" column="7" class=" square square-white"  id="g4" data-piece=""></div>
-<div row="4" column="8" class=" square square-grey"   id="h4" data-piece=""></div>
-<!-- 3rd row -->
-<div row="3" column="1" class=" square square-grey"   id="a3" data-piece=""></div>
-<div row="3" column="2" class=" square square-white"  id="b3" data-piece=""></div>
-<div row="3" column="3" class=" square square-grey"   id="c3" data-piece=""></div>
-<div row="3" column="4" class=" square square-white"  id="d3" data-piece=""></div>
-<div row="3" column="5" class=" square square-grey"   id="e3" data-piece=""></div>
-<div row="3" column="6" class=" square square-white"  id="f3" data-piece=""></div>
-<div row="3" column="7" class=" square square-grey"   id="g3" data-piece=""></div>
-<div row="3" column="8" class=" square square-white"  id="h3" data-piece=""></div>
-<!-- 2nd row -->
-<div row="2" column="1" class=" square square-white"  id="a2" data-piece="pawn">wp</div>
-<div row="2" column="2" class=" square square-grey"   id="b2" data-piece="pawn">wp</div>
-<div row="2" column="3" class=" square square-white"  id="c2" data-piece="pawn">wp</div>
-<div row="2" column="4" class=" square square-grey"   id="d2" data-piece="pawn">wp</div>
-<div row="2" column="5" class=" square square-white"  id="e2" data-piece="pawn">wp</div>
-<div row="2" column="6" class=" square square-grey"   id="f2" data-piece="pawn">wp</div>
-<div row="2" column="7" class=" square square-white"  id="g2" data-piece="pawn">wp</div>
-<div row="2" column="8" class=" square square-grey"   id="h2" data-piece="pawn">wp</div>
-<!-- 1st row -->
-<div row="1" column="1" class=" square square-grey"   id="a1" data-piece="rook">wR</div>
-<div row="1" column="2" class=" square square-white"  id="b1" data-piece="knight">wK</div>
-<div row="1" column="3" class=" square square-grey"   id="c1" data-piece="bishop">wB</div>
-<div row="1" column="4" class=" square square-white"  id="d1" data-piece="queen">wQ</div>
-<div row="1" column="5" class=" square square-grey"   id="e1" data-piece="king">wK</div>
-<div row="1" column="6" class=" square square-white"  id="f1" data-piece="bishop">wB</div>
-<div row="1" column="7" class=" square square-grey"   id="g1" data-piece="knight">wK</div>
-<div row="1" column="8" class=" square square-white"  id="h1" data-piece="rook">wR</div>
-</div>
-  <script>
-    $(".square").on("click",function(e){
-      console.log($(this).data("piece"),$(this).attr("id"))
-    })
 
-  </script>
+<head>
+    <meta charset="UTF-8">
+    <title>Chess</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="board">
+                <% (0..7).each do |y| %>
+                <% (0..7).each do |x| %>
+                <% chess_piece = @chess_pieces.where("(x_position = ? AND y_position = ?)", x,y).first %>
+                <% if chess_piece.nil? %>
+                <div class="<%=@game.tile_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
+                    <%= y %>>
+                </div>
+                <% else %>
+                <div class="<%=@game.tile_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
+                    <%= y %>>
+                    <div class="chess_piece text-center" data-piece-id="<%=chess_piece.id%>" data-x-coord=<%=x %> data-y-coord=
+                        <%= y %> >
+                        <%= chess_piece.unicode.html_safe %>
+                    </div>
+                </div>
+                <% end %>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

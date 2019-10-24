@@ -14,7 +14,7 @@
     top: 100px;
 }
 
-.square-grey{
+.square-grey {
     float: left;
     width: 80px;
     height: 80px;
@@ -25,7 +25,7 @@
     vertical-align: middle;
 }
 
-.square-white{
+.square-white {
     float: left;
     width: 80px;
     height: 80px;
@@ -34,4 +34,30 @@
     text-align: center;
     display: table-cell;
     vertical-align: middle;
+}
+
+.board {
+    width: 690px;
+    height: 690px;
+    margin: 20px;
+    border: 25px solid #333;
+
+}
+
+.grey {
+    background-color: grey;
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+.white {
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+.chess_piece {
+    font-size: 50px;
+
 }
