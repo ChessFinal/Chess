@@ -19,5 +19,9 @@ class Game < ApplicationRecord
     @move_from = move_from
     @move_to =  move_to
   end
+
+  def set_board
+    a8
+  end
 end
 
