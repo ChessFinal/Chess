@@ -2,26 +2,29 @@ class Game < ApplicationRecord
   attr_accessor :move_from, :move_to
   belongs_to :user
   has_many :moves
+  has_many :chess_pieces
+  after_create :layout_board
 
-  def is_obstructed?
-    if @move_from == 'F1' and @move_to =='D3'
-      return true
-    elsif @move_from == 'A1' and @move_to == 'A4'
-      return true
+  def tile_colour (x,y)
+    if(y.odd? && x.odd?) || (y.even? && x.even?)
+      "white"
+    elsif (y.odd? && x.even?) || (y.even? && x.odd?)
+      "grey"
+    end    
+  end
+
+  def layout_board
+   #Code that will draw White Pawns
+   (0..7).each do |x_position|
+     Pawn.create(game_id: id, x_position: x_position, y_position: 6, unicode: "&#9817;", name: "White Pawn")
     end
-    if @move_from == 'D4' and @move_to == 'B5'
-      raise ArgumentError, 'Invalid move - not horizontal, vertical, or diagonal.'
-    end
-    false
   end
+ 
 
-  def chess_moves(move_from, move_to)
-    @move_from = move_from
-    @move_to =  move_to
-  end
 
-  def set_board
-    a8
-  end
+
+
+
+
 end
 
