@@ -113,7 +113,11 @@
       <method v="2" />
     </configuration>
   </component>
+<<<<<<< HEAD
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="false" RAKE_SPRING_PRE_LOADER_OPTION="false" RAILS_SPRING_PRE_LOADER_OPTION="false" />
+=======
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+>>>>>>> 8b784d8e9d4ee2fc1b8403de925e98cc4edd3ee7
   <component name="SvnConfiguration">
     <configuration />
   </component>
