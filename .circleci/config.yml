@@ -8,6 +8,8 @@ jobs:
     docker:
         # specify the version you desire here
       - image: circleci/ruby:2.5.3-node-browsers
+        environment:
+          BUNDLER_VERSION: 2.0.2
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -17,8 +19,7 @@ jobs:
       # working_directory: ~/repo
       # working_directory: ~
       # git add .circleci/config.yml
-      - environment:
-          BUNDLER_VERSION: 2.0.2
+
     steps:
       - checkout
 #      - run:
