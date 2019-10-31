@@ -23,11 +23,12 @@ jobs:
     steps:
       - checkout
       - run:
-          - sudo gem update --system
-          - sudo gem uninstall bundler
-          - sudo rm /usr/local/bin/bundle
-          - sudo rm /usr/local/bin/bundler
-          - sudo gem install bundler
+          command: |
+            sudo gem update --system
+            sudo gem uninstall bundler
+            sudo rm /usr/local/bin/bundle
+            sudo rm /usr/local/bin/bundler
+            sudo gem install bundler
 
 
       # Download and cache dependencies
