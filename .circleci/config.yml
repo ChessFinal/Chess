@@ -6,7 +6,9 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
+      - environment:
+          BUNDLER_VERSION: 2.0.2
+        # specify the version you desire here
       - image: circleci/ruby:2.5.3-node-browsers
 
       # Specify service dependencies here if necessary
@@ -19,6 +21,13 @@ jobs:
       # git add .circleci/config.yml
     steps:
       - checkout
+#      - run:
+ #         - sudo gem update --system
+  #        - sudo gem uninstall bundler
+   #       - sudo rm /usr/local/bin/bundle
+    #      - sudo rm /usr/local/bin/bundler
+     #     - sudo gem install bundler
+
 
       # Download and cache dependencies
       - restore_cache:
