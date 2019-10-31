@@ -2,8 +2,7 @@ class Game < ApplicationRecord
   attr_accessor :move_from, :move_to
   belongs_to :user
   has_many :moves
-  has_many :chess_pieces
-  after_create :layout_board
+  
 
   def tile_colour (x,y)
     if(y.odd? && x.odd?) || (y.even? && x.even?)
@@ -13,6 +12,7 @@ class Game < ApplicationRecord
     end    
   end
 
+=begin
   def layout_board
    #Code that will draw White Pawns
    (0..7).each do |x_position|
@@ -55,12 +55,7 @@ class Game < ApplicationRecord
    #Code that will draw Black Queen
      King.create(game_id: id, x_position: 4, y_position: 0, unicode: "&#9818;", name: "Black King")
   end
- 
-
-
-
-
-
+=end
 
 end
 
