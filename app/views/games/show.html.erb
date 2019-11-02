@@ -11,7 +11,7 @@
             <div class="board">
                 <% (0..7).each do |y| %>
                   <% (0..7).each do |x| %>
-                    <% chess_piece = @chess_pieces.where("(x_position = ? AND y_position = ?)", x,y).first %>
+                    <% chess_piece = @chess_pieces.where("(coordinateX = ? AND coordinateY = ?)", x,y).first %>
                     <% if chess_piece.nil? %>
                       <div class="<%=@game.tile_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
                         <%= y %>>

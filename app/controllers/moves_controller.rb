@@ -10,6 +10,6 @@ class MovesController < ApplicationController
   private
 
   def piece_params
-    params.permit(:id, :x_position, :y_position, :name, :unicode)
+    params.permit(:id, :coordinateX, :coordinateY, :name, :unicode)
   end
 end
