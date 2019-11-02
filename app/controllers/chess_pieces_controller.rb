@@ -1,0 +1,2 @@
+class ChessPiecesController < ApplicationController
+end
