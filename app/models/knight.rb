@@ -1,2 +1,2 @@
-class Knight < Move
+class Knight < ChessPiece
 end

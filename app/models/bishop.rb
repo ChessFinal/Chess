@@ -1,2 +1,2 @@
-class Bishop < Move
+class Bishop < ChessPiece
 end

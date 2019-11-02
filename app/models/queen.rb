@@ -1,2 +1,2 @@
-class Queen < Move
+class Queen < ChessPiece
 end

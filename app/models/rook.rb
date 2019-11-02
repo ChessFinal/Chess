@@ -1,2 +1,2 @@
-class Rook < Move
+class Rook < ChessPiece
 end

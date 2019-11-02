@@ -1,4 +1,4 @@
-class King < Move
+class King < ChessPiece
 
   def horizontal_valid_move?(new_y_coord)
     y_difference = (new_y_coord - y_coord).abs
