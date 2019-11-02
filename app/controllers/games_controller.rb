@@ -3,7 +3,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @chess_pieces = @game.moves
+    @chess_pieces = @game.chess_pieces
   end
 
   def new
