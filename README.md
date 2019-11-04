@@ -22,6 +22,6 @@ Lead by:
 With amazing guidance from:
 <a href="https://github.com/BigPhatNerd">Wilson Horrell</a>
 
-##Screenshots
+## Screenshots
 
 Coming soon!
