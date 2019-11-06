@@ -56,11 +56,5 @@ class Game < ApplicationRecord
      King.create(game_id: id, x_position: 4, y_position: 0, unicode: "&#9818;", name: "Black King")
   end
 
-
-
-
-
-
-
 end
 

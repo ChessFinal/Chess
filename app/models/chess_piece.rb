@@ -1,5 +1,5 @@
 class ChessPiece < ApplicationRecord
-
+ 
 
   # This method checks whether a piece is present at (x, y).
   #
