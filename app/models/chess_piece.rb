@@ -1,5 +1,5 @@
 class ChessPiece < ApplicationRecord
-  belongs_to :game
+
 
   # This method checks whether a piece is present at (x, y).
   #
@@ -35,7 +35,7 @@ class ChessPiece < ApplicationRecord
   # * *Raises* :
   #   - +RuntimeError+ -> if the path is not a straight line
 
-  def obstructed?(destination)
+  def is_obstructed?(destination)
     @game = game
     # converts the location arrays into easier-to-read x and y terms
     x1 = self.x_position #assume starting points

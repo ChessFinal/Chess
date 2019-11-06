@@ -12,7 +12,7 @@ RSpec.describe ChessPiece, type: :model do
       piece5 = @game.chess_pieces.find_by(x_position: 2, y_position: 4, type: "Pawn", colour: "white")
 
       assert piece1.is_obstructed?([3, 0]) == true
-      assert piece2.is_obstructed?([2, 4) == true
+      assert piece2.is_obstructed?([2, 4]) == true
       assert piece1.is_obstructed?([0, 0]) == true
       assert piece3.is_obstructed?([3, 4]) == true
       assert piece4.is_obstructed?([3, 6]) == true
