@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ChessPiece, type: :model do
 
   
-  @game = ([
+  @game = Game.new {[
     [1, 0, 0, 1, 1, 1, 1, 1],
     [0, 0, 1, 1, 1, 1, 1, 1],
     [1, 1, 0, 0, 0, 0, 0, 1],
@@ -12,8 +12,13 @@ RSpec.describe ChessPiece, type: :model do
     [0, 0, 0, 0, 0, 0, 0, 0],
     [1, 1, 0, 0, 1, 1, 1, 1],
     [1, 1, 0, 1, 0, 1, 1, 1],
-  ])
+  ]}
   
+  # ^
+  # |
+  # y
+  # |
+  # ---x--- >
 
 
   describe "is_obstructed? describes available moves for a chess piece" do
