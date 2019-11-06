@@ -10,7 +10,7 @@ class ChessPiece < ApplicationRecord
   #   - False otherwise
   #
   def occupied?(x, y)
-    game.pieces.where(x_position: x, y_position: y).present?
+    @game.pieces.where(x_position: x, y_position: y).present?
   end
 
   def check_path(x1, y1, x2, y2)
@@ -36,7 +36,7 @@ class ChessPiece < ApplicationRecord
   #   - +RuntimeError+ -> if the path is not a straight line
 
   def is_obstructed?(destination)
-    @game = game
+    @game = Game.new
     # converts the location arrays into easier-to-read x and y terms
     x1 = self.x_position #assume starting points
     y1 = self.y_position
