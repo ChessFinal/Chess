@@ -2,6 +2,20 @@ require 'rails_helper'
 
 RSpec.describe ChessPiece, type: :model do
 
+  
+  @game = ([
+    [1, 0, 0, 1, 1, 1, 1, 1],
+    [0, 0, 1, 1, 1, 1, 1, 1],
+    [1, 1, 0, 0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 1, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 0, 0, 1, 1, 1, 1],
+    [1, 1, 0, 1, 0, 1, 1, 1],
+  ])
+  
+
+
   describe "is_obstructed? describes available moves for a chess piece" do
     it "should return false if none of the chess pieces are blocking the moving chess piece" do
       @game = Game.new
@@ -21,7 +35,10 @@ RSpec.describe ChessPiece, type: :model do
       assert piece5.is_obstructed?([0, 4]) == false
       assert_raise RuntimeError do
         piece1.is_obstructed?([1, 2])
+      
       end
     end
   end
 end
+
+

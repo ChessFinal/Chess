@@ -96,3 +96,6 @@ class ChessPiece < ApplicationRecord
   end
 
 end
+
+
+
