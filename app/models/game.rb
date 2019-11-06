@@ -14,7 +14,7 @@ class Game < ApplicationRecord
   end
 
   def layout_board
-   #Code that will draw White Pawns
+    #Code that will draw White Pawns
    (0..7).each do |x_position|
      Pawn.create(game_id: id, x_position: x_position, y_position: 6, unicode: "&#9817;", name: "White Pawn")
    end
@@ -55,7 +55,7 @@ class Game < ApplicationRecord
    #Code that will draw Black Queen
      King.create(game_id: id, x_position: 4, y_position: 0, unicode: "&#9818;", name: "Black King")
   end
- 
+
 
 
 
