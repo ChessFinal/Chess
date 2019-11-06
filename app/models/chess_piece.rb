@@ -1,71 +1,98 @@
 class ChessPiece < ApplicationRecord
-  attr_accessor :x, :y
   belongs_to :game
 
+  # This method checks whether a piece is present at (x, y).
+  #
+  # * *Args*    :
+  #   - +x, y+ -> x and y coordinates of the instance piece
+  # * *Returns* :
+  #   - True if square at (x, y) is occupied
+  #   - False otherwise
+  #
+  def occupied?(x, y)
+    game.pieces.where(x_position: x, y_position: y).present?
+  end
 
-
-
-
-
-
-
-
-  # =begin hashes out everything until =end
-
-=begin
-
-    def is_obstructed?
-     if @move_from == 'F1' and @move_to =='D3'
-        return true
-     elsif @move_from == 'A1' and @move_to == 'A4'
-       return true
-     end
-     if @move_from == 'D4' and @move_to == 'B5'
-       raise ArgumentError, 'Invalid move - not horizontal, vertical, or diagonal.'
-     end
-     false
+  def check_path(x1, y1, x2, y2)
+    if y1 == y2
+      return 'horizontal'
+    elsif x1 == x2
+      return 'vertical'
+    else
+      # move diagonal
+      @slope = (y2 - y1).to_f / (x2 - x1).to_f
     end
+  end
 
-    def chess_moves(move_from, move_to)
-      @move_from = move_from
-      @move_to =  move_to
+
+  # This method determines whether the path between instance piece and destination is obstructed by another piece.
+  #
+  # * *Args*    :
+  #   - +destination+ -> array containing x and y coordinates of the piece's intended destination
+  # * *Returns* :
+  #   - True if one or more squares between the piece and the destination are occupied
+  #   - False otherwise
+  # * *Raises* :
+  #   - +RuntimeError+ -> if the path is not a straight line
+
+  def obstructed?(destination)
+    @game = game
+    # converts the location arrays into easier-to-read x and y terms
+    x1 = self.x_position #assume starting points
+    y1 = self.y_position
+    x2 = destination[0]
+    y2 = destination[1]
+    # Determines whether the line between piece1 and the destination is horizontal or
+    # vertical. If neither, then it calculates the slope of line between piece1 and destination.
+    path = check_path(x1, y1, x2, y2)
+    # move horizontal right to left
+    if path == 'horizontal' && x1 < x2
+      (x1 + 1).upto(x2 - 1) do |x|
+        return true if occupied?(x, y1)
+      end
     end
-
-    def set_board
-      a8
+    # horizontal left to right
+    if path == 'horizontal' && x1 > x2
+      (x1 - 1).downto(x2 + 1) do |x|
+        return true if occupied?(x, y1)
+      end
     end
-
-
-    def initialize(x, y)
-      @x = x
-      @y = y
+    # move vertical down
+    if path == 'vertical' && y1 < y2
+      (y1 + 1).upto(y2 - 1) do |y|
+        return true if occupied?(x1, y)
+      end
     end
-
-    def convert_x_to_column
-      case
-       when @x == 0 then return "A"
-      when @x == 1 then return "B"
-      when @x == 2 then return "C"
-      when @x == 3 then return "D"
-      when @x == 4 then return "E"
-      when @x == 5 then return "F"
-      when @x == 6 then return "G"
-      when @x == 7 then return "H"
-      else
-      # Raise an error here.
-     end
+    # move vertical up
+    if path == 'vertical' && y1 > y2
+      (y1 - 1).downto(y2 + 1) do |y|
+        return true if occupied?(x1, y)
+      end
     end
-
-    def convert_y_to_row
-    (8 - @y).to_s
+    if path == 'horizontal' || path == 'vertical'
+      return false
     end
-
-  # Ruby to string method.  This is called method overloading.
-    def to_s
-       convert_x_to_column + convert_y_to_row
+    # move diagonally down
+    if @slope.abs == 1.0 && x1 < x2
+      (x1 + 1).upto(x2 - 1) do |x|
+        delta_y = x - x1
+        y = y2 > y1 ? y1 + delta_y : y1 - delta_y
+        return true if occupied?(x, y)
+      end
     end
-
-=end
-
+    # move diagonally up
+    if @slope.abs == 1.0 && x1 > x2
+      (x1 - 1).downto(x2 + 1) do |x|
+        delta_y = x1 - x
+        y = y2 > y1 ? y1 + delta_y : y1 - delta_y
+        return true if occupied?(x, y)
+      end
+    end
+    # not a straight diagonal line
+    if @slope.abs != 1.0
+      fail 'path is not a straight line'
+    else return false
+    end
+  end
 
 end
