@@ -3,8 +3,8 @@ class Game < ApplicationRecord
   belongs_to :user
   has_many :moves
   has_many :chess_pieces
-  after_create :layout_board
 
+=begin
   def tile_colour (x,y)
     if(y.odd? && x.odd?) || (y.even? && x.even?)
       "white"
@@ -12,11 +12,8 @@ class Game < ApplicationRecord
       "grey"
     end    
   end
+=end
 
-
-  def after_initialize do |game|
-    @board = Board.new
-  end
 
 end
 
