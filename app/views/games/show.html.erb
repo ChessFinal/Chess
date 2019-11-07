@@ -11,13 +11,13 @@
     <div class="board">
       <% (0..7).each do |y| %>
         <% (0..7).each do |x| %>
-          <% chess_piece = @chess_pieces.select{|chess_piece|chess_piece.x_position == x && chess_piece.y_position == y}.first %>
+          <% chess_piece = @board.get_piece_at(x,y) %>
           <% if chess_piece.nil? %>
-            <div class="<%=@game.tile_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
+            <div class="<%=@board.get_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
                  <%= y %>>
             </div>
           <% else %>
-            <div class="<%=@game.tile_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
+            <div class="<%=@board.get_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
                  <%= y %>>
               <div class="chess_piece text-center" data-piece-id="<%=chess_piece.id%>" data-x-coord=<%=x %> data-y-coord=
                    <%= y %> >
@@ -33,4 +33,4 @@
 </body>
 
 
-</html>
+</html> 
