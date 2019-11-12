@@ -1,5 +1,5 @@
 class ChessPiece
- attr_accessor :x_position, :y_position, :colour
+ attr_accessor :x_position, :y_position, :colour, :id, :game
 
   # This method checks whether a piece is present at (x, y).
   #
@@ -10,11 +10,11 @@ class ChessPiece
   #   - False otherwise
   #
 
-  def initialize(x, y, colour)
+  def initialize(x, y, colour, id)
     @x_position = x
     @y_position = y
     @colour = colour
-
+    @id = id
   end
 
   def occupied?(x, y)

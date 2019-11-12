@@ -1,19 +1,14 @@
 class Game < ApplicationRecord
-  attr_accessor :move_from, :move_to, :board
+  attr_accessor :board
   belongs_to :user
   has_many :moves
   has_many :chess_pieces
 
-=begin
-  def tile_colour (x,y)
-    if(y.odd? && x.odd?) || (y.even? && x.even?)
-      "white"
-    elsif (y.odd? && x.even?) || (y.even? && x.odd?)
-      "grey"
-    end    
-  end
-=end
 
+  after_initialize do |game|
+    @board = Board.new
+    @board.game = game
+  end
 
 end
 
