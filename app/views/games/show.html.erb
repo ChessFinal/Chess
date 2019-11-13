@@ -17,11 +17,12 @@
                  <%= y %>>
             </div>
           <% else %>
+            <!-- This method returns an array -->
             <div class="<%=@board.get_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=<%= y %>>
-              <div class="chess_piece text-center" data-piece-id ="<%=chess_piece-id%>" data-x-coord=<%=x %> data-y-coord= <%= y %> %>
-                <%= chess_piece.unicode.html_safe %>
-              </div>
+
             </div>
+            </div>
+
           <% end %>
         <% end %>
       <% end %>
