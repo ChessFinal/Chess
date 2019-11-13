@@ -1,4 +1,16 @@
 class King < ChessPiece
+  def initialize(x, y, colour, id)
+    super(x,y,colour,id)
+  end
+
+    def unicode
+      if @colour == "white"
+        "&#9812"
+      else
+        "&#9818"
+      end
+    end
+
 
   def horizontal_valid_move?(new_y_coord)
     y_difference = (new_y_coord - y_coord).abs

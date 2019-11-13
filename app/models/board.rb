@@ -1,7 +1,8 @@
 class Board
- attr_accessor :chess_pieces
+ attr_accessor :chess_pieces, :game
 
   def initialize
+
     @chess_pieces = [
      Pawn.new(1,0, 'white', 1),
      Pawn.new(1,1, 'white', 2),
@@ -39,6 +40,7 @@ class Board
      Knight.new(7,6,  'black', 31),
      Rook.new(7,7,    'black', 32),
     ]
+
   end
 
   def get_piece_at(x,y)
