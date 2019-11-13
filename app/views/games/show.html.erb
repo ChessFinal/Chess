@@ -18,12 +18,12 @@
             </div>
           <% else %>
             <!-- This method returns an array -->
-            <div class="<%=@board.get_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=<%= y %>>
-
-            </div>
+            <div class="<%=@board.get_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
+                 <%= y %>>
             </div>
 
           <% end %>
+
         <% end %>
       <% end %>
     </div>
