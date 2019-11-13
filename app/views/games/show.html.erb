@@ -13,17 +13,16 @@
         <% (0..7).each do |x| %>
           <% chess_piece = @board.get_piece_at(x,y) %>
           <% if chess_piece.nil? %>
-            <div class="<%=@board.get_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
-                 <%= y %>>
+            <div class="<%=@board.get_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=<%= y %>>
             </div>
           <% else %>
-            <!-- This method returns an array -->
-            <div class="<%=@board.get_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
-                 <%= y %>>
-            </div>
+
+            <div class="<%=@board.get_colour(x,y)%>" data-piece-id="<% chess_piece.id %>" data-x-coord=<%=x %> data-y-coord=<%= y %>>
+            test</div>
+
+
 
           <% end %>
-
         <% end %>
       <% end %>
     </div>

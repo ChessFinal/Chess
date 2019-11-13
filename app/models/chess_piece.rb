@@ -1,5 +1,5 @@
 class ChessPiece 
- attr_accessor :x_position, :y_position, :colour, :id
+ attr_accessor :x_position, :y_position, :colour, :id, :unicode
 
   # This method checks whether a piece is present at (x, y).
   #
@@ -21,7 +21,7 @@ class ChessPiece
 
 
   def unicode
-    nil
+
   end
 
 
