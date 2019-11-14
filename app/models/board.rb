@@ -49,6 +49,7 @@ class Board
         return piece
       end
     end
+    return nil
   end
 
   def get_colour(x,y)

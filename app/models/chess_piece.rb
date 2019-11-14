@@ -16,9 +16,7 @@ class ChessPiece
     @y_position = y
     @colour = colour
     @id = id
-    
   end
-
 
   def unicode
     nil
