@@ -1,4 +1,4 @@
-class ChessPiece 
+class ChessPiece < ApplicationRecord
  attr_accessor :x_position, :y_position, :colour, :id, :unicode
 
   # This method checks whether a piece is present at (x, y).

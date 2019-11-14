@@ -2,35 +2,21 @@ require 'rails_helper'
 
 RSpec.describe ChessPiece, type: :model do
 
-  
-  @game = Game.new {[
-    [1, 0, 0, 1, 1, 1, 1, 1],
-    [0, 0, 1, 1, 1, 1, 1, 1],
-    [1, 1, 0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 1, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 1, 0, 0, 1, 1, 1, 1],
-    [1, 1, 0, 1, 0, 1, 1, 1],
-  ]}
-  
-  # ^
-  # |
-  # y
-  # |
-  # ---x--- >
-
 
   describe "is_obstructed? describes available moves for a chess piece" do
     it "should return false if none of the chess pieces are blocking the moving chess piece (p1)" do
       @game = Game.new
+      @game.board = Board.new ([
+          -set pieces as per diagram
+      ])
+
       #arrange
-      piece1 = @game.chess_pieces.find_by(x_position: 0, y_position: 2)
+      piece1 = @game.board.find_by(x_position: 0, y_position: 2)
       #act                                  #assert
       assert piece1.is_obstructed?([2, 4]) == false
-      end
-    
-  
+    end
+
+=begin
     it "should return false if none of the chess pieces are blocking the moving chess piece (p2)" do
       @game = Game.new
       #arrange
@@ -70,5 +56,7 @@ RSpec.describe ChessPiece, type: :model do
                #act                                #assert
               assert piece6.is_obstructed?([2, 0]) == false
               end
+
+=end
     end
   end

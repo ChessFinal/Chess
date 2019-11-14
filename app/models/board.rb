@@ -1,10 +1,11 @@
 class Board
  attr_accessor :chess_pieces, :game
 
-  def initialize
+  def initialize(chess_pieces)
 
-    @chess_pieces = [
-     Pawn.new(0,1, 'black', 1),
+      if chess_pieces == nil || chess_pieces.length == 0
+        chess_pieces = [
+      Pawn.new(0,1, 'black', 1),
      Pawn.new(1,1, 'black', 2),
      Pawn.new(2,1, 'black', 3),
      Pawn.new(3,1, 'black', 4),
@@ -41,6 +42,12 @@ class Board
      Rook.new(7,7,    'white', 32),
     ]
 
+      end
+
+    @chess_pieces = chess_pieces
+    puts @chess_pieces
+    puts "Does this hit?"
+
   end
 
   def get_piece_at(x,y)
@@ -49,6 +56,7 @@ class Board
         return piece
       end
     end
+    return nil
   end
 
   def get_colour(x,y)
