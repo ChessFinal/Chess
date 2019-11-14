@@ -4,6 +4,12 @@ class Game < ApplicationRecord
   has_many :moves
   has_many :chess_pieces
 
+  after_initialize do |game|
+    @board = Board.new
+    @board.game = game
+  end
+
+
 =begin
   def tile_colour (x,y)
     if(y.odd? && x.odd?) || (y.even? && x.even?)
