@@ -1,5 +1,5 @@
-class ChessPiece
- attr_accessor :x_position, :y_position, :colour, :id, :game
+class ChessPiece < ApplicationRecord
+ #attr_accessor :x_position, :y_position, :colour, :id, :unicode
 
   # This method checks whether a piece is present at (x, y).
   #
@@ -9,14 +9,21 @@ class ChessPiece
   #   - True if square at (x, y) is occupied
   #   - False otherwise
   #
+ 
+  #def initialize(x, y, colour, id)
+  #  @x_position = x
+  #  @y_position = y
+  #  @colour = colour
+  #  @id = id
 
-  def initialize(x, y, colour, id)
-    @x_position = x
-    @y_position = y
-    @colour = colour
-    @id = id
+
+    
+  # end
+
+  def unicode
 
   end
+
 
   def occupied?(x, y)
     @game.pieces.where(x_position: x, y_position: y).present?
