@@ -1,7 +1,5 @@
 class Knight < ChessPiece
-    def initialize(x, y, colour, id)
-        super(x,y,colour,id)
-    end
+  
 
     def unicode
         if @colour == "white"

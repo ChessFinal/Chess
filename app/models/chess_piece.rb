@@ -1,5 +1,5 @@
-class ChessPiece 
- attr_accessor :x_position, :y_position, :colour, :id
+class ChessPiece < ApplicationRecord
+ #attr_accessor :x_position, :y_position, :colour, :id, :unicode
 
   # This method checks whether a piece is present at (x, y).
   #
@@ -11,15 +11,18 @@ class ChessPiece
   #
  
 
-  def initialize(x, y, colour, id)
-    @x_position = x
-    @y_position = y
-    @colour = colour
-    @id = id
-  end
+  #def initialize(x, y, colour, id)
+  #  @x_position = x
+  #  @y_position = y
+  #  @colour = colour
+  #  @id = id
+
+
+    
+  # end
 
   def unicode
-    nil
+
   end
 
 

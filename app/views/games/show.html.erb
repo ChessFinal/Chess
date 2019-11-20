@@ -11,19 +11,19 @@
     <div class="board">
       <% (0..7).each do |y| %>
         <% (0..7).each do |x| %>
-          <% chess_piece = @board.get_piece_at(x,y) %>            
-          <div class="<%=@board.get_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=<%= y %>>
 
-          <% if chess_piece.nil? %>
-            <div class="<%=@board.get_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=
-                 <%= y %>>
-            </div>
-          <% else %>
-              <div class="chess_piece text-center" data-piece-id ="<%=chess_piece.id%>" data-x-coord=<%=x %> data-y-coord= <%= y %> %>
-                <%= chess_piece.unicode.html_safe %>
-              </div>
-            </div>
-          <% end %>
+          <div class="<%=@board.get_colour(x,y)%>" data-x-coord=<%=x %> data-y-coord=<%= y %>>
+             <% chess_piece = @board.get_piece_at(x,y) %>
+              <% if chess_piece.nil? %>
+
+              <% else %>
+                <div class="chess_piece text-center" data-piece-id ="<%=chess_piece.id%>" data-x-coord="<%=x %>" data-y-coord= "<%= y %>"">
+                  <%= chess_piece.unicode.html_safe %>
+
+                </div>
+
+              <% end %>
+          </div>
         <% end %>
       <% end %>
     </div>

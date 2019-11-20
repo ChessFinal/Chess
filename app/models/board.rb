@@ -1,48 +1,7 @@
 class Board
  attr_accessor :chess_pieces, :game
 
-  def initialize
-
-    @chess_pieces = [
-     Pawn.new(1,0, 'white', 1),
-     Pawn.new(1,1, 'white', 2),
-     Pawn.new(1,2, 'white', 3),
-     Pawn.new(1,3, 'white', 4),
-     Pawn.new(1,4, 'white', 5),
-     Pawn.new(1,5, 'white', 6),
-     Pawn.new(1,6, 'white', 7),
-     Pawn.new(1,7, 'white', 8),
-
-     Rook.new(0,0, 'white', 9),
-     Knight.new(0,1, 'white', 10),
-     Bishop.new(0,2, 'white', 11),
-     Queen.new(0,3, 'white', 12),
-     King.new(0,4, 'white', 13),
-     Bishop.new(0,5, 'white', 14),
-     Knight.new(0,6, 'white', 15),
-     Rook.new(0,7, 'white', 16),
-
-     Pawn.new(6,0, 'black', 17),
-     Pawn.new(6,1, 'black', 18),
-     Pawn.new(6,2, 'black', 19),
-     Pawn.new(6,3, 'black', 20),
-     Pawn.new(6,4, 'black', 21),
-     Pawn.new(6,5, 'black', 22),
-     Pawn.new(6,6, 'black', 23),
-     Pawn.new(6,7, 'black', 24),
-
-     Rook.new(7,0,    'black', 25),
-     Knight.new(7,1,  'black', 26),
-     Bishop.new(7,2,  'black', 27),
-     Queen.new(7,3,   'black', 28),
-     King.new(7,4,    'black', 29),
-     Bishop.new(7,5,  'black', 30),
-     Knight.new(7,6,  'black', 31),
-     Rook.new(7,7,    'black', 32),
-    ]
-
-  end
-
+  
   def get_piece_at(x,y)
     @chess_pieces.each do |piece|
       if piece.x_position.to_i == x.to_i && piece.y_position.to_i == y.to_i
