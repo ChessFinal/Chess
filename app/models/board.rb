@@ -1,5 +1,9 @@
 class Board
- attr_accessor :chess_pieces, :game
+ attr_accessor :chess_pieces
+
+  def initialize(chess_pieces)
+    @chess_pieces = chess_pieces
+  end
 
   def get_piece_at(x,y)
     @chess_pieces.each do |piece|
