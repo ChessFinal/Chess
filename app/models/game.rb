@@ -5,11 +5,18 @@ class Game < ApplicationRecord
 
 
   after_initialize do |game|
-    setup_pieces
+    if game.new_record?
+      setup_pieces
+    end
+    puts @chess_pieces
+    puts "-------"
+    puts game.chess_pieces
     @board = Board.new(game.chess_pieces.to_a)
     puts @board.inspect
 
   end
+
+
 
   def setup_pieces
   

@@ -17,6 +17,7 @@
               <% if chess_piece %>
                 <div class="chess_piece text-center" data-piece-id ="<%=chess_piece.id%>" data-x-coord="<%=x %>" data-y-coord= "<%= y %>"">
                   <%= chess_piece.unicode.html_safe %>
+                  <%= chess_piece.inspect %>
                 </div>
               <% end %>
           </div>

@@ -21,7 +21,7 @@ class ChessPiece < ApplicationRecord
   # end
 
   def unicode
-
+    ""
   end
 
 
